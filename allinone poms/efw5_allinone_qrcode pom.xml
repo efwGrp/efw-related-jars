@@ -1,0 +1,102 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>io.github.efwgrp</groupId>
+  <artifactId>barcode4j_2.1.0_zxing_3.5.3</artifactId>
+  <version>allinone</version>
+  <dependencies>
+    <dependency>
+      <groupId>net.sf.barcode4j</groupId>
+      <artifactId>barcode4j</artifactId>
+      <version>2.1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.zxing</groupId>
+      <artifactId>core</artifactId>
+      <version>3.5.3</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.zxing</groupId>
+      <artifactId>javase</artifactId>
+      <version>3.5.3</version>
+    </dependency>
+
+  </dependencies>
+<build><plugins>
+<plugin>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-shade-plugin</artifactId>
+  <version>3.5.0</version>
+  <executions>
+    <execution>
+      <phase>package</phase>
+      <goals>
+        <goal>shade</goal>
+      </goals>
+      <configuration>
+        <transformers>
+          <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+        </transformers>
+        <filters>
+          <filter>
+            <artifact>org.apache.ant:ant</artifact>
+            <excludes>
+              <exclude>**</exclude>
+            </excludes>
+          </filter>
+          <filter>
+            <artifact>org.apache.ant:ant-launcher</artifact>
+            <excludes>
+              <exclude>**</exclude>
+            </excludes>
+          </filter>
+          <filter>
+            <artifact>avalon-framework:avalon-framework-impl</artifact>
+            <excludes>
+              <exclude>**</exclude>
+            </excludes>
+          </filter>
+          <filter>
+            <artifact>commons-cli:commons-cli</artifact>
+            <excludes>
+              <exclude>**</exclude>
+            </excludes>
+          </filter>
+          <filter>
+            <artifact>commons-lang:commons-lang</artifact>
+            <excludes>
+              <exclude>**</exclude>
+            </excludes>
+          </filter>
+          <filter>
+            <artifact>commons-logging:commons-logging</artifact>
+            <excludes>
+              <exclude>**</exclude>
+            </excludes>
+          </filter>
+          <filter>
+            <artifact>com.github.jai-imageio:jai-imageio-core</artifact>
+            <excludes>
+              <exclude>**</exclude>
+            </excludes>
+          </filter>
+          <filter>
+            <artifact>com.beust:jcommander</artifact>
+            <excludes>
+              <exclude>**</exclude>
+            </excludes>
+          </filter>
+          <filter>
+            <artifact>junit:junit</artifact>
+            <excludes>
+              <exclude>**</exclude>
+            </excludes>
+          </filter>
+        </filters>
+
+      </configuration>
+    </execution>
+  </executions>
+</plugin>
+</plugins></build>
+
+</project>
