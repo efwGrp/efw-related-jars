@@ -6,12 +6,17 @@ This repository is created to store all the jars of the Efw project.
 - graaljs-24.2.2_allinone
 graaljs for efw5 and jdk21 or later
 
+- fast-object-pool-2.2.1
+pool for efw5.1
+
 - nashorn-15.6_allinone
 nashorn for efw4 and jdk11 or later
 if jdk8 or 9, dont import the jar
 
 - openpdf-2.2.4_allinone
-jdk21 or later
+jdk21 or later and efw4.8 efw5.0
+- openpdf-2.4.0_allinone
+jdk21 or later and efw5.1
 
 - poi-5.3.0_allinone
 - poi-5.4.1_allinone
